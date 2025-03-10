@@ -1,72 +1,69 @@
-# Exercise 3: Temperature Converter
 from typing import Union
 
-# Defining a Temperature type for cleaner type hints
+# Définition du type Temperature pour les annotations de type
 Temperature = Union[int, float]
 
 
 def celsius_to_fahrenheit(celsius: Temperature) -> float:
     """
-    Convert temperature from Celsius to Fahrenheit.
+    Convertit une température de Celsius en Fahrenheit.
 
     Formula: F = C × 9/5 + 32
 
     Args:
-        celsius: Temperature in Celsius
+        celsius: Température en degrés Celsius.
 
     Returns:
-        Temperature in Fahrenheit (rounded to 2 decimal places)
+        Température en degrés Fahrenheit (arrondie à 2 décimales).
     """
-    # TODO: Implement this function
-    pass
+    return round(celsius * 9/5 + 32, 2)
 
 
 def fahrenheit_to_celsius(fahrenheit: Temperature) -> float:
     """
-    Convert temperature from Fahrenheit to Celsius.
+    Convertit une température de Fahrenheit en Celsius.
 
     Formula: C = (F - 32) × 5/9
 
     Args:
-        fahrenheit: Temperature in Fahrenheit
+        fahrenheit: Température en degrés Fahrenheit.
 
     Returns:
-        Temperature in Celsius (rounded to 2 decimal places)
+        Température en degrés Celsius (arrondie à 2 décimales).
     """
-    # TODO: Implement this function
-    pass
+    return round((fahrenheit - 32) * 5/9, 2)
 
 
 def celsius_to_kelvin(celsius: Temperature) -> float:
     """
-    Convert temperature from Celsius to Kelvin.
+    Convertit une température de Celsius en Kelvin.
 
     Formula: K = C + 273.15
 
     Args:
-        celsius: Temperature in Celsius
+        celsius: Température en degrés Celsius.
 
     Returns:
-        Temperature in Kelvin (rounded to 2 decimal places)
+        Température en Kelvin (arrondie à 2 décimales).
     """
-    # TODO: Implement this function
-    pass
+    return round(celsius + 273.15, 2)
 
 
 def kelvin_to_celsius(kelvin: Temperature) -> float:
     """
-    Convert temperature from Kelvin to Celsius.
+    Convertit une température de Kelvin en Celsius.
 
     Formula: C = K - 273.15
 
     Args:
-        kelvin: Temperature in Kelvin
+        kelvin: Température en Kelvin.
 
     Returns:
-        Temperature in Celsius (rounded to 2 decimal places)
+        Température en degrés Celsius (arrondie à 2 décimales).
 
     Raises:
-        ValueError: If kelvin is less than 0 (below absolute zero)
+        ValueError: Si kelvin est inférieur à 0 (température en dessous du zéro absolu).
     """
-    # TODO: Implement this function
-    pass
+    if kelvin < 0:
+        raise ValueError("La température en Kelvin ne peut pas être inférieure à 0.")
+    return round(kelvin - 273.15, 2)
